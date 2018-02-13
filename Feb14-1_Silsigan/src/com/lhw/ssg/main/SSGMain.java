@@ -1,4 +1,4 @@
-package lhw.com.wp.main;
+package com.lhw.ssg.main;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -6,7 +6,7 @@ import java.net.URL;
 
 import javax.net.ssl.HttpsURLConnection;
 
-public class Main {
+public class SSGMain {
 
 	public static void main(String[] args) throws Exception {
 		String target = "https://www.naver.com/";
@@ -19,7 +19,7 @@ public class Main {
 		int hour = 0;
 		int min = 0;
 		int sec = 0;
-		
+		int rank =0;
 		
 		// 네이버 서버시간
 		while ((temp = br.readLine()) != null) {
@@ -31,8 +31,10 @@ public class Main {
 				hour = Integer.parseInt(temp.substring(8, 10));
 				min = Integer.parseInt(temp.substring(10, 12));
 				sec = Integer.parseInt(temp.substring(12, 14));
-
 				System.out.printf("%d년 %d월 %d일 %d시 %d분 %d초", year, month, day, hour, min, sec);
+			}
+			if (temp.contains("class=\"ah_k\"")) { // 실시간 검색어
+				System.out.println("실시간 순위 "+ ++rank + "위 "+ temp.split("<span class=\"ah_k\">")[1].split("</span>")[0]);
 			}
 		}
 		con.disconnect();
