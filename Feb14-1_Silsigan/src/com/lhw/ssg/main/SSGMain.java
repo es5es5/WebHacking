@@ -19,7 +19,7 @@ public class SSGMain {
 		int hour = 0;
 		int min = 0;
 		int sec = 0;
-		int rank =0;
+		int rank =1;
 		
 		// 네이버 서버시간
 		while ((temp = br.readLine()) != null) {
