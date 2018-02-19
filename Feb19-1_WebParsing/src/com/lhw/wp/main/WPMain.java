@@ -1,12 +1,12 @@
-package com.lhw.ssg.main;
 
+package com.lhw.wp.main;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.URL;
 
 import javax.net.ssl.HttpsURLConnection;
 
-public class SSGMain {
+public class WPMain {
 
 	public static void main(String[] args) throws Exception {
 		String target = "https://www.naver.com/";
@@ -19,7 +19,7 @@ public class SSGMain {
 		int hour = 0;
 		int min = 0;
 		int sec = 0;
-		int rank =0;
+		int rank =1;
 		
 		// 네이버 서버시간
 		while ((temp = br.readLine()) != null) {
